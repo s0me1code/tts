@@ -1,19 +1,20 @@
-import { Button } from "@/components/ui/button"
+import { HelperStatus } from "@/components/helper-status"
 
 export default function Page() {
+  const showHelperStatus = process.env.NODE_ENV === "development"
+
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
+    <div className="flex min-h-svh flex-col">
+      <header className="flex items-center justify-between gap-4 border-b border-border px-6 py-3">
+        <p className="font-heading text-sm font-medium tracking-tight">TTS</p>
+        {showHelperStatus ? <HelperStatus /> : null}
+      </header>
+      <main className="flex flex-1 flex-col gap-2 p-6 text-sm text-muted-foreground">
+        <h1 className="font-heading text-foreground text-base font-medium">
+          Home
+        </h1>
+        <p>Helper connection status appears in the header during development.</p>
+      </main>
     </div>
   )
 }

@@ -1,14 +1,22 @@
 # Helper
 
-Minimal Python FastAPI skeleton for the local TTS helper.
+Minimal Python FastAPI local helper for TTS.
 
-Not implemented yet — package layout only so the monorepo shape is clear.
+Dev surface so far: `GET /health` → `{"status":"ok"}` (CORS open to the local Next site).
+
+## Run
+
+```bash
+cd helper
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+Health check: `http://127.0.0.1:8000/health`
 
 ## Layout
 
-- `app/` — FastAPI application package (placeholder)
-- `requirements.txt` — dependency pin list (placeholder)
-
-## Later
-
-Wire up FastAPI, TTS inference, and any local tooling the website calls.
+- `app/` — FastAPI application package
+- `requirements.txt` — FastAPI + uvicorn
