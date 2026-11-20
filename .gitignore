@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+
+# Node (website keeps its own; root ignore for safety)
+node_modules/
+.next/
+out/
+dist/
+*.log
